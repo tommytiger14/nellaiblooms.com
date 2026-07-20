@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nellai Blooms | Premium Live Plants Gifting | Tirunelveli</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D5016;
+            --primary-light: #5A8C3F;
+            --accent: #90C695;
+            --cream: #FEFEF8;
+            --gray-dark: #333333;
+            --gray-light: #666666;
+            --border-light: #E8F5E9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background: var(--cream);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--gray-light);
+            margin-bottom: 0.85rem;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 80, 22, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-light {
+            background: white;
+        }
+
+        .section-accent {
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.05) 0%, rgba(144, 198, 149, 0.08) 100%);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, white 0%, var(--border-light) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray-light);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 280px;
+        }
+
+        .plant-display {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual {
+                height: 300px;
+            }
+        }
+
+        /* Why section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.1);
+        }
+
+        .why-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Products section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.15);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .product-header h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+        }
+
+        .product-includes {
+            background: var(--border-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .product-includes li {
+            margin-bottom: 0.5rem;
+            color: var(--gray-dark);
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-includes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* How it works */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--gray-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Pricing badge */
+        .pricing-badge {
+            display: inline-block;
+            background: var(--border-light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero-visual {
+                height: 200px;
+            }
+
+            .plant-display {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container">
+        <div class="logo">
+            <img src="Logo.jpeg" alt="Nellai Blooms">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#why">Why Plants</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#how">How It Works</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Living Gifts.<br>Lasting Impressions.</h1>
+                    <p>Premium live plants in artisanal ceramic pots. Gifts that don't fade, gifts that thrive—a living reminder of your thoughtfulness that grows with time.</p>
+                    <p style="font-size: 1rem; margin-bottom: 0.3rem;"><strong>Perfect for:</strong></p>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">✓ Employee recognition • ✓ Client appreciation • ✓ Team celebrations • ✓ Personal gifting</p>
+                    <div class="hero-cta">
+                        <a href="https://wa.me/918925035100?text=Hi%20I'm%20interested%20in%20Nellai%20Blooms%20gifting%20service" class="btn btn-primary">WhatsApp Us</a>
+                        <a href="#products" class="btn btn-secondary">See Products</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="Logo.jpeg" alt="Nellai Blooms Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Plants Section -->
+    <section id="why" class="section section-light">
+        <div class="container">
+            <h2>Why Choose Live Plants?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🌿</div>
+                    <h3>Long-Lasting Impact</h3>
+                    <p>Recipients keep plants for 2–5+ years. That's 2 years of your brand on their desk or home.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">♻️</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Zero packaging waste. Sourced from local nurseries. Aligns with corporate ESG initiatives.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🏡</div>
+                    <h3>Office & Home Perfect</h3>
+                    <p>Works for remote, hybrid, or office teams. Instantly brightens any space.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💚</div>
+                    <h3>Boosts Wellness</h3>
+                    <p>Plants improve air quality, reduce stress, and boost mood—a thoughtful gift backed by science.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🚀</div>
+                    <h3>Easy to Care For</h3>
+                    <p>Low-maintenance varieties like Aglaonema and Spider Plant thrive with minimal effort.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">✨</div>
+                    <h3>Premium Presentation</h3>
+                    <p>Handpicked ceramic pots + care instructions. Unboxing experience that feels thoughtful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section section-accent">
+        <div class="container">
+            <h2>Our Collections</h2>
+            <div class="products-grid">
+                <!-- ZZ Plant -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="pricing-badge">Best for Beginners</div>
+                        <h3>ZZ Plant</h3>
+                        <div class="product-price">₹349 - ₹389</div>
+                    </div>
+                    <div class="product-body">
+                        <p><strong>ZZ Plant</strong> in 3" premium ceramic pot</p>
+                        <ul class="product-includes">
+                            <li>Healthy, vibrant ZZ plant</li>
+                            <li>3" premium ceramic pot</li>
+                            <li>Care instruction card</li>
+                            <li>Beautiful gift packaging</li>
+                            <li>30 days WhatsApp support</li>
+                        </ul>
+                        <p style="font-size: 0.95rem; color: var(--gray-light);">Perfect for: First-time plant parents, low-maintenance gifting</p>
+                    </div>
+                </div>
+
+                <!-- Philodendron -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="pricing-badge">Most Popular</div>
+                        <h3>Philodendron</h3>
+                        <div class="product-price">₹429</div>
+                    </div>
+                    <div class="product-body">
+                        <p><strong>Philodendron</strong> in 4" premium ceramic pot</p>
+                        <ul class="product-includes">
+                            <li>Lush, trailing Philodendron plant</li>
+                            <li>4" premium ceramic pot</li>
+                            <li>Detailed care guide</li>
+                            <li>Premium gift wrapping</li>
+                            <li>60 days WhatsApp support</li>
+                            <li>Replacement guarantee</li>
+                        </ul>
+                        <p style="font-size: 0.95rem; color: var(--gray-light);">Perfect for: Offices, desks, personal gifting</p>
+                    </div>
+                </div>
+
+                <!-- Aglaonema -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="pricing-badge">Premium Choice</div>
+                        <h3>Aglaonema</h3>
+                        <div class="product-price">₹449</div>
+                    </div>
+                    <div class="product-body">
+                        <p><strong>Aglaonema</strong> in 4" premium ceramic pot</p>
+                        <ul class="product-includes">
+                            <li>Vibrant Aglaonema with beautiful foliage</li>
+                            <li>4" premium ceramic pot</li>
+                            <li>Comprehensive care guide</li>
+                            <li>Custom gift box with branding</li>
+                            <li>Personalized message card</li>
+                            <li>90 days support + swap option</li>
+                        </ul>
+                        <p style="font-size: 0.95rem; color: var(--gray-light);">Perfect for: VIP gifting, corporate partnerships, leadership gifts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packaging Showcase -->
+    <section class="section section-light">
+        <div class="container">
+            <h2>Premium Packaging Inside & Out</h2>
+            <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="Packaging.jpeg" alt="Nellai Blooms Premium Packaging" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">What Your Gift Includes</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Premium Ceramic Pot:</strong> Handpicked, high-quality ceramic in neutral tones</li>
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Healthy Plant:</strong> Sourced from trusted nurseries, health-checked before shipping</li>
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Branded Gift Box:</strong> Custom white box with "Living Gifts. Lasting Impressions." branding</li>
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Care Instructions:</strong> Detailed printed guide + digital care tips</li>
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Message Card:</strong> Personalized card to share your message</li>
+                        <li style="margin-bottom: 0.75rem;">✓ <strong>Ongoing Support:</strong> 30–90 days of WhatsApp care support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="how" class="section section-light">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Tell Us</h3>
+                    <p>Share the occasion, recipient count, and plant preference via WhatsApp or call.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>We Design</h3>
+                    <p>We propose plant & pot combinations with photos. You approve the mockup.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>We Deliver</h3>
+                    <p>Plants are sourced, assembled, and delivered within 5–7 working days.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>We Support</h3>
+                    <p>Recipients get care instructions + 30–90 days of WhatsApp support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section class="section section-accent">
+        <div class="container">
+            <h2>What Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Absolutely thoughtful. Our team loved it. Months later, people still mention it."</p>
+                    <div class="testimonial-author">Priya Sharma</div>
+                    <div class="testimonial-role">HR Manager, Tech Company</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Premium feel, easy to care for. This beats generic corporate gifts by miles."</p>
+                    <div class="testimonial-author">Rajesh K.</div>
+                    <div class="testimonial-role">Managing Director</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Great customer service. When I had questions, they helped via WhatsApp instantly."</p>
+                    <div class="testimonial-author">Ananya D.</div>
+                    <div class="testimonial-role">Individual Gifter</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Ready for Lasting Impressions?</h2>
+            <p>Join Tirunelveli's leading companies making meaningful, living gifts.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">⏰ Standard Delivery: 15 Days</p>
+            <div class="footer-cta-buttons">
+                <a href="https://wa.me/918925035100?text=Hi%20Nellai%20Blooms%20I'm%20interested%20in%20your%20gifting%20service" class="btn btn-secondary">💬 WhatsApp</a>
+                <a href="mailto:sales@nellaiblooms.com" class="btn btn-secondary">📧 Email</a>
+                <a href="tel:918925035100" class="btn btn-secondary">📱 Call</a>
+            </div>
+            <div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.95;">
+                <p>📧 sales@nellaiblooms.com | 📱 8925035100</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Nellai Blooms | Premium Live Plants Gifting | Tirunelveli, Tamil Nadu</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Living Gifts. Lasting Impressions. 🌿</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
