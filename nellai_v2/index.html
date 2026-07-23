@@ -268,25 +268,46 @@
 
         /* Trust strip */
         .trust-strip {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
-            padding: 1.75rem 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.25rem;
+            padding: 2.5rem 0;
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
         }
 
         .trust-item {
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.98rem;
-            font-weight: 600;
-            color: var(--primary);
+            align-items: flex-start;
+            gap: 0.9rem;
         }
 
-        .trust-item span.ico { font-size: 1.3rem; }
+        .trust-item .ico {
+            font-size: 1.75rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .trust-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .trust-desc {
+            font-size: 0.88rem;
+            color: var(--ink-soft);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .trust-strip { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 520px) {
+            .trust-strip { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
 
         /* Services */
         .services-grid {
@@ -505,7 +526,6 @@
             .section { padding: 3rem 0; }
             .section-tight { padding: 2rem 0; }
             .container { padding: 0 1.5rem; }
-            .trust-strip { gap: 1.25rem 2rem; justify-content: flex-start; }
         }
     </style>
 </head>
@@ -549,10 +569,34 @@
     <!-- Trust strip -->
     <div class="container">
         <div class="trust-strip">
-            <div class="trust-item"><span class="ico">🌿</span> Thrives for years</div>
-            <div class="trust-item"><span class="ico">♻️</span> Eco-friendly gifting</div>
-            <div class="trust-item"><span class="ico">💚</span> Boosts wellbeing</div>
-            <div class="trust-item"><span class="ico">📦</span> Premium unboxing</div>
+            <div class="trust-item">
+                <span class="ico">🌿</span>
+                <div>
+                    <div class="trust-title">Thrives for Years</div>
+                    <div class="trust-desc">Low-maintenance plants that stay healthy for 2–5+ years with minimal care.</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="ico">♻️</span>
+                <div>
+                    <div class="trust-title">Eco-Friendly Gifting</div>
+                    <div class="trust-desc">Zero packaging waste, sourced from local nurseries — a gift that gives back.</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="ico">💚</span>
+                <div>
+                    <div class="trust-title">Boosts Wellbeing</div>
+                    <div class="trust-desc">Plants improve air quality and mood — a thoughtful gift backed by science.</div>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="ico">📦</span>
+                <div>
+                    <div class="trust-title">Premium Unboxing</div>
+                    <div class="trust-desc">Branded gift box, care card, and message card — ready to gift on arrival.</div>
+                </div>
+            </div>
         </div>
     </div>
 
